@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import dummy from "../db/data.json";
 
 export default function DayList(){
@@ -11,7 +12,9 @@ export default function DayList(){
         <ul className="list_day">
             {dummy.days.map(day => ( // day라는 매개변수로 dummy.days 각각의 데이터를 참조하여 접근한다.
                 <li key={day.id}>     
+                <Link to={`/day/${day.day}`}>
                     Day {day.day}
+                </Link>
                 </li>
             ))} 
         </ul>

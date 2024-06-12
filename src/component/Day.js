@@ -1,13 +1,17 @@
 import dummy from "../db/data.json";
+import {useParams, ustParams} from "react-router-dom";
 
 export default function Day(){
     //dummy.words
-    const day = 1; // day가 1인것만 출력하기 위해
-    const wordList = dummy.words.filter(word => word.day === day);
+
+    const a = useParams();
+    const day = a.day;
+    const wordList = dummy.words.filter(word => word.day === Number(day));
     console.log(wordList);
 
     return(
         <>
+        <h2>Day{day}</h2>
         <table>
             <tbody>
                 {wordList.map(word=>(

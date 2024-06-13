@@ -4,8 +4,8 @@ import Day from './component/Day';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import EmptyPage from './component/EmptyPage';
 
-// Switch 내부는 url에 따라 각각 다른 페이지를 보여준다.
-// Switch 외부는 공통된 페이지를 보여준다.
+// Routes 내부는 url에 따라 각각 다른 페이지를 보여준다.
+// Routes 외부는 공통된 페이지를 보여준다.
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         이를 방지하기 위해서 exact path를 사용하여야 한다. */}          
           <Route path="/" element={<DayList />} />
           <Route path="/day/:day" element={<Day />} />
+          {/*위의 path에서 콜론 다음엔 url에서 해당 자리를 찾아 day라는 변수에 저장한다. */}
           <Route path='*' element={<EmptyPage />} />
         </Routes>
       </BrowserRouter>

@@ -5,7 +5,9 @@ export default function Day(){
     //dummy.words
 
     const a = useParams();
+    console.log(a);
     const day = a.day;
+    // Number(day)를 이용해 문자열을 숫자로 Parsing
     const wordList = dummy.words.filter(word => word.day === Number(day));
     console.log(wordList);
 
